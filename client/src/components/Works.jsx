@@ -14,6 +14,7 @@ const ProjectCard = ({
   description,
   tags,
   image,
+  live_demo,
   source_code_link,
 }) => {
   return (
@@ -51,11 +52,7 @@ const ProjectCard = ({
           <div className="flex gap-12">
             <h3 className="text-white font-bold text-[24px]">{name}</h3>
             <div className="ml-0">
-              <a
-                href="https://verbalizee.netlify.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={live_demo} target="_blank" rel="noopener noreferrer">
                 <button class="py-2 px-4 bg-blue-900 text-white rounded">
                   Live Demo
                 </button>

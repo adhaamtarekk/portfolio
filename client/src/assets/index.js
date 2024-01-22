@@ -31,6 +31,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import verbalizee from "./verbalizee.png";
+import morgal from "./morgal.png";
 
 export {
   logo,
@@ -64,4 +65,5 @@ export {
   jobit,
   tripguide,
   verbalizee,
+  morgal,
 };
