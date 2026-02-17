@@ -1,339 +1,147 @@
 import {
   mobile,
   backend,
-  creator,
+  // creator,
   web,
   javascript,
   typescript,
   html,
   css,
   reactjs,
-  redux,
+  // redux,
   tailwind,
   nodejs,
   mongodb,
-  git,
-  figma,
+  // git,
+  // figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
+  // threejs,
   lirten,
+  deloitte,
+  yodawy,
   verbalizee,
   morgal,
+  java,
+  springboot,
+  mysql,
+  angular,
+  // kafka,
+  laravel
 } from "../assets";
 
 export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "work",
-    title: "Work",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+  { id: "about", title: "About" },
+  { id: "work", title: "Work" },
+  { id: "contact", title: "Contact" },
 ];
 
 const services = [
-  {
-    title: "Full-Stack Developer",
-    icon: web,
-  },
-  {
-    title: "React Developer",
-    icon: mobile,
-  },
-
-  {
-    title: "Flutter Developer",
-    icon: creator,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
+  { title: "Full-Stack Engineer", icon: web },
+  { title: "Frontend Engineer (React / Angular)", icon: web },
+  { title: "Backend Engineer (Java / Laravel / APIs)", icon: backend },
+  { title: "Mobile Developer (React Natvie / Flutter)", icon: mobile },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  //   {
-  //     name: "TypeScript",
-  //     icon: typescript,
-  //   },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  //   {
-  //     name: "Redux Toolkit",
-  //     icon: redux,
-  //   },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  //   {
-  //     name: "Three JS",
-  //     icon: threejs,
-  //   },
-  {
-    name: "git",
-    icon: git,
-  },
-  //   {
-  //     name: "figma",
-  //     icon: figma,
-  //   },
-  //   {
-  //     name: "docker",
-  //     icon: docker,
-  //   },
+  { name: "Java", icon: java },
+  { name: "Spring Boot", icon: springboot },
+  { name: "HTML 5", icon: html },
+  { name: "CSS 3", icon: css },
+  { name: "JavaScript", icon: javascript },
+  { name: "TypeScript", icon: typescript },
+  { name: "React.js", icon: reactjs },
+  { name: "AngularJS", icon: angular },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "Node.js", icon: nodejs },
+  { name: "MongoDB", icon: mongodb },
+  { name: "MySQL", icon: mysql },
+  { name: "Docker", icon: docker },
+  // { name: "Git", icon: git },
+  // { name: "Kafka", icon: kafka },
+  { name: "laravel", icon: laravel },
 ];
 
 const experiences = [
   {
-    title: "Flutter Developer",
-    company_name: "Lirten Solutions",
-    icon: lirten,
+    title: "Full Stack Engineer Analyst",
+    company_name: "Deloitte Innovation Hub",
+    icon: deloitte,
     iconBg: "#383E56",
-    date: "September 2021 - March 2022",
+    date: "May 2025 - Present",
     points: [
-      "Developing and maintaining mobile applications using Flutter and related technologies.",
-      "Contributed to the development team responsible for creating Stract, a responsive mobile application that facilitated connections between clients and skilled software developers.",
-      "Collaborated effectively with cross-functional teams, including designers, product managers, and fellow developers, to deliver high-quality products.",
-      "Implemented responsive design principles to ensure optimal user experiences across different devices.",
-      "Ensured cross-browser compatibility for seamless functionality across various web browsers.",
+      "Developed and maintained enterprise full-stack applications for internal platforms across multiple business units.",
+      "Built scalable RESTful APIs using Java (Spring Boot) and integrated MySQL databases with optimized queries and transaction management.",
+      "Implemented responsive user interfaces using React.js and AngularJS, translating Figma designs into reusable, production-ready UI components.",
+      "Collaborated with cross-functional teams in agile sprints, contributing to feature planning, implementation, and iterative delivery.",
+      "Improved maintainability through modular architecture, reusable components, and clean code practices (code reviews and structured testing).",
     ],
   },
   {
-    title: "MERN Developer",
+    title: "Full Stack Software Engineer",
+    company_name: "Yodawy",
+    icon: yodawy,
+    iconBg: "#383E56",
+    date: "Mar 2024 - Apr 2025",
+    points: [
+      "Developed and maintained order management and orchestration systems using Laravel, Livewire, and Java Vert.x.",
+      "Designed backend services and business logic layers to support transactional workflows and healthcare data processing.",
+      "Integrated external healthcare/insurance systems and third-party APIs to enable secure and reliable data exchange.",
+      "Built and enhanced front-end features for the AXA insurance mobile application using React.js, collaborating with stakeholders to deliver production-ready UI.",
+      "Improved performance and stability through query optimization, refactoring, and modular service structuring.",
+    ],
+  },
+  {
+    title: "Front-end Mobile Developer Intern",
     company_name: "Lirten Solutions",
     icon: lirten,
     iconBg: "#383E56",
-    date: "April 2022 - September 2022",
+    date: "Sep 2021 - Sep 2022",
     points: [
-      "Proficient in developing and maintaining web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) and related technologies.",
-      "Contributed to the development team responsible for creating Stract, a purpose-driven website that connected clients seeking software development solutions with a diverse community of skilled and talented developers.",
-      "Implemented responsive design principles to ensure optimal user experiences across various devices.",
-      "Ensured cross-browser compatibility for a seamless browsing experience across different web browsers.",
+      "Developed the front-end interface for the “Stract” mobile application using Flutter.",
+      "Implemented user-facing features to support discovery and engagement flows.",
+      "Collaborated with cross-functional teams to integrate front-end components with backend systems via REST APIs.",
     ],
   },
-  // {
-  //   title: "React Native Developer",
-  //   company_name: "Tesla",
-  //   icon: tesla,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2021 - Feb 2022",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Web Developer",
-  //   company_name: "Shopify",
-  //   icon: shopify,
-  //   iconBg: "#383E56",
-  //   date: "Jan 2022 - Jan 2023",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
-  // {
-  //   title: "Full stack Developer",
-  //   company_name: "Meta",
-  //   icon: meta,
-  //   iconBg: "#E6DEDD",
-  //   date: "Jan 2023 - Present",
-  //   points: [
-  //     "Developing and maintaining web applications using React.js and other related technologies.",
-  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-  //     "Implementing responsive design and ensuring cross-browser compatibility.",
-  //     "Participating in code reviews and providing constructive feedback to other developers.",
-  //   ],
-  // },
 ];
 
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "Adham consistently delivers high-quality work, communicates clearly, and takes strong ownership of features end-to-end.",
+    name: "Reference Available",
+    designation: "Team Lead",
+    company: "Upon request",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "Verbalizee",
+    name: "Verbalize",
     description:
-      "A web-based platform enables users to express their feelings through visually and verbally composed posts.",
+      "A web-based platform that enables users to express their feelings through visually and verbally composed posts.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "express",
-        color: "green-text-gradient",
-      },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "mongodb", color: "green-text-gradient" },
+      { name: "express", color: "green-text-gradient" },
+      { name: "css", color: "pink-text-gradient" },
     ],
     image: verbalizee,
     live_demo: "https://verbalizee.netlify.app/",
     source_code_link: "https://github.com/adhaamtarekk/Verbalize",
   },
   {
-    name: "Morgal Internantional",
+    name: "Morgal International",
     description:
-      "Web-based platform serves as a showcase for Morgal International, highlighting their position as a leading provider of electromechanical products in the region. Through this platform, visitors can explore the extensive range of cutting-edge solutions offered by Morgal International.",
+      "A company website showcasing an electromechanical product catalog and providing a seamless browsing experience for customers.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      // {
-      //   name: "mongodb",
-      //   color: "green-text-gradient",
-      // },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-      // {
-      //   name: "express",
-      //   color: "green-text-gradient",
-      // },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "css", color: "pink-text-gradient" },
     ],
     image: morgal,
     live_demo: "https://morgalinternational.com/",
     source_code_link: "https://github.com/adhaamtarekk/Morgal-International",
   },
-
-  // {
-  //   name: "Car Rent",
-  //   description:
-  //     "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "mongodb",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "tailwind",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: carrent,
-  //   live_demo: "https://morgalinternational.com/",
-  //   source_code_link: "https://github.com/",
-  // },
-
-  // {
-  //   name: "Job IT",
-  //   description:
-  //     "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "restapi",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scss",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: jobit,
-  //   source_code_link: "https://github.com/",
-  // },
-
-  // {
-  //   name: "Trip Guide",
-  //   description:
-  //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-  //   tags: [
-  //     {
-  //       name: "nextjs",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "supabase",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "css",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: tripguide,
-  //   source_code_link: "https://github.com/",
-  // },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

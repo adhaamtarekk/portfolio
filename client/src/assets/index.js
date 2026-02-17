@@ -21,12 +21,21 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import java from './tech/java.png';
+import springboot from './tech/springboot.png';
+import mysql from './tech/mysql.png';
+import kafka from './tech/kafka.png';
+import angular from './tech/angular.png';
+import laravel from './tech/laravel.png';
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import lirten from "./company/lirten.png";
+import deloitte from "./company/deloitte.png";
+import yodawy from "./company/yodawy.png";
+
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -66,4 +75,12 @@ export {
   tripguide,
   verbalizee,
   morgal,
+  java,
+  springboot,
+  mysql,
+  kafka,
+  angular,
+  deloitte,
+  yodawy,
+  laravel
 };

@@ -47,18 +47,12 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a Computer Engineering graduate from the German University in
-        Cairo, equipped with comprehensive skills as a software developer. My
-        expertise lies in the MERN stack, Flutter, and proficiency in frameworks
-        such as React, Express.js, and Flutter. With a strong commitment to
-        continuous learning, I adapt quickly to new technologies and stay
-        up-to-date with industry trends. I thrive on collaborating closely with
-        clients, ensuring a deep understanding of their requirements and
-        leveraging my technical prowess to create efficient, scalable, and
-        user-friendly solutions that effectively address real-world problems. My
-        goal is to bring your ideas to life by delivering high-quality software
-        solutions that exceed expectations. Let's embark on a collaborative
-        journey and transform your vision into reality.
+        Full-stack Software Engineer with 2+ years of professional experience
+        building scalable web, mobile, and enterprise applications. Strong
+        expertise in Java, Spring Boot, React.js, AngularJS, Node.js, Laravel,
+        and distributed systems. Experienced in designing RESTful APIs, database
+        schema design, system integrations, and delivering production-ready
+        solutions in agile environments.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
