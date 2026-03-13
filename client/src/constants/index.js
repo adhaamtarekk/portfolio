@@ -21,6 +21,7 @@ import {
   yodawy,
   verbalizee,
   morgal,
+  payflow,
   java,
   springboot,
   mysql,
@@ -116,6 +117,21 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "PayFlow",
+    description:
+      "Full-stack digital wallet with voice-based payment entry, peer-to-peer transfers, and analytics. Voice input for Arabic and English, JWT auth, P2P transfers, Recharts analytics, budgets, and Capacitor mobile app.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "next.js", color: "green-text-gradient" },
+      { name: "prisma", color: "green-text-gradient" },
+      { name: "postgresql", color: "pink-text-gradient" },
+      { name: "capacitor", color: "blue-text-gradient" },
+    ],
+    image: payflow,
+    live_demo: "https://pay-flow-fe.vercel.app/",
+    source_code_link: "https://github.com/adhaamtarekk/PayFlow",
+  },
   {
     name: "Verbalize",
     description:
