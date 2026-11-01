@@ -42,6 +42,7 @@ import tripguide from "./tripguide.png";
 import verbalizee from "./verbalizee.png";
 import morgal from "./morgal.png";
 import payflow from "./payflow.png";
+import doubleA from "./double-a.png";
 
 export {
   logo,
@@ -77,6 +78,7 @@ export {
   verbalizee,
   morgal,
   payflow,
+  doubleA,
   java,
   springboot,
   mysql,

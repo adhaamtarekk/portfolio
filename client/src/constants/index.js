@@ -22,6 +22,7 @@ import {
   verbalizee,
   morgal,
   payflow,
+  doubleA,
   java,
   springboot,
   mysql,
@@ -117,6 +118,19 @@ const testimonials = [
 ];
 
 const projects = [
+  {
+    name: "Double A",
+    description:
+      "An independent bilingual website concept for Double A Design & Build. Responsive English and Arabic layouts, an interactive project gallery, service details, and a demo enquiry flow for an architecture and interior design studio.",
+    tags: [
+      { name: "html", color: "blue-text-gradient" },
+      { name: "css", color: "pink-text-gradient" },
+      { name: "javascript", color: "green-text-gradient" },
+      { name: "arabic-rtl", color: "blue-text-gradient" },
+    ],
+    image: doubleA,
+    live_demo: "https://double-a-concept.vercel.app/",
+  },
   {
     name: "PayFlow",
     description:
