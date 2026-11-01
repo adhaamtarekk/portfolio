@@ -19,7 +19,6 @@ import {
   lirten,
   deloitte,
   yodawy,
-  verbalizee,
   morgal,
   payflow,
   doubleA,
@@ -145,20 +144,6 @@ const projects = [
     image: payflow,
     live_demo: "https://pay-flow-fe.vercel.app/",
     source_code_link: "https://github.com/adhaamtarekk/PayFlow",
-  },
-  {
-    name: "Verbalize",
-    description:
-      "A web-based platform that enables users to express their feelings through visually and verbally composed posts.",
-    tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "mongodb", color: "green-text-gradient" },
-      { name: "express", color: "green-text-gradient" },
-      { name: "css", color: "pink-text-gradient" },
-    ],
-    image: verbalizee,
-    live_demo: "https://verbalizee.netlify.app/",
-    source_code_link: "https://github.com/adhaamtarekk/Verbalize",
   },
   {
     name: "Morgal International",
