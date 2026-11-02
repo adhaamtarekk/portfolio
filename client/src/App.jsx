@@ -66,8 +66,11 @@ const roles = [
     role: "Full Stack Engineer Analyst",
     date: "May 2025 — Present",
     points: [
-      "Build enterprise applications with Java, Spring Boot, and MySQL.",
-      "Develop responsive React and Angular interfaces and integrate REST APIs.",
+      "Developed and maintained enterprise full-stack applications for internal platforms across multiple business units.",
+      "Built scalable RESTful APIs using Java (Spring Boot) and integrated MySQL databases with optimized queries and transaction management.",
+      "Implemented responsive user interfaces using React.js and AngularJS, translating Figma designs into reusable, production-ready UI components.",
+      "Collaborated with cross-functional teams in agile sprints, contributing to feature planning, implementation, and iterative delivery.",
+      "Improved maintainability through modular architecture, reusable components, and clean code practices (code reviews and structured testing).",
     ],
   },
   {
@@ -75,8 +78,11 @@ const roles = [
     role: "Full Stack Software Engineer",
     date: "Mar 2024 — Apr 2025",
     points: [
-      "Developed order management and orchestration systems using Laravel, Livewire, and Java Vert.x.",
-      "Integrated healthcare and insurance systems, and contributed React interfaces for the AXA mobile application.",
+      "Developed and maintained order management and orchestration systems using Laravel, Livewire, and Java Vert.x.",
+      "Designed backend services and business logic layers to support transactional workflows and healthcare data processing.",
+      "Integrated external healthcare/insurance systems and third-party APIs to enable secure and reliable data exchange.",
+      "Built and enhanced front-end features for the AXA insurance mobile application using React.js, collaborating with stakeholders to deliver production-ready UI.",
+      "Improved performance and stability through query optimization, refactoring, and modular service structuring.",
     ],
   },
   {
@@ -84,8 +90,9 @@ const roles = [
     role: "Front-end Mobile Developer Intern",
     date: "Sep 2021 — Sep 2022",
     points: [
-      "Built Flutter interfaces for the Stract mobile application.",
-      "Connected user-facing features to backend services through REST APIs.",
+      "Developed the front-end interface for the “Stract” mobile application using Flutter.",
+      "Implemented user-facing features to support discovery and engagement flows.",
+      "Collaborated with cross-functional teams to integrate front-end components with backend systems via REST APIs.",
     ],
   },
 ];
