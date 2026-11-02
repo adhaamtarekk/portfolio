@@ -3,10 +3,28 @@ import emailjs from "@emailjs/browser";
 import payflow from "./assets/payflow.png";
 import doubleA from "./assets/double-a.png";
 import morgal from "./assets/morgal-preview.jpg";
+import raStudio from "./assets/ra-studio.png";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const linkedin = "https://linkedin.com/in/adham-tarek-726394250/";
 const projects = [
+  {
+    id: "ra-studio",
+    name: "RA Studio",
+    category: "ARCHITECTURE WEBSITE · INDEPENDENT CONCEPT",
+    tagline: "A sense of place, on screen.",
+    image: raStudio,
+    intro:
+      "A cinematic architecture and interior design website concept with a curated collection and a guided project brief.",
+    problem:
+      "Bring architecture, interiors, and finishing together in a clear digital experience for a design studio.",
+    build:
+      "Built responsive layouts, a manual hero slideshow, collection filters, accessible project dialogs, and a three-step brief with copy and download options.",
+    result:
+      "An independent concept with illustrative photography and visual studies. Project briefs stay in the browser and are never submitted or stored.",
+    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    demo: "https://ra-studio-demo.vercel.app/",
+  },
   {
     id: "payflow",
     name: "PayFlow",
