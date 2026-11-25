@@ -1123,3 +1123,126 @@ input, textarea { padding: 16px; border-radius: 2px; font-size: 16px; }
     font-size: 18px;
   }
 }
+
+/* Polish: hero showcase, livelier project frames. */
+.hero-showcase {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.3fr;
+  gap: 16px;
+  margin-top: 64px;
+  align-items: end;
+}
+.showcase-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #cfd6dd;
+  background: #ffffff;
+  box-shadow: 0 24px 50px -32px #263b5080;
+  animation: showcase-in 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.showcase-item:nth-child(2) {
+  animation-delay: 0.08s;
+  margin-bottom: 28px;
+}
+.showcase-item:nth-child(3) {
+  animation-delay: 0.16s;
+  margin-bottom: 14px;
+}
+.showcase-item:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.showcase-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+  object-position: top left;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.showcase-item:hover img {
+  transform: scale(1.05);
+}
+.showcase-item span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background: #263b50e6;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+.showcase-item:hover span,
+.showcase-item:focus-visible span {
+  opacity: 1;
+  transform: none;
+}
+@keyframes showcase-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.browser-chrome i:nth-child(1) {
+  background: #e7766c;
+}
+.browser-chrome i:nth-child(2) {
+  background: #e7b55c;
+}
+.browser-chrome i:nth-child(3) {
+  background: #74b47a;
+}
+.project-visual a {
+  display: block;
+  overflow: hidden;
+}
+.project-visual img {
+  transition:
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    filter 0.2s;
+}
+.project-visual a:hover img {
+  transform: scale(1.03);
+}
+.project-visual {
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
+}
+.project:hover .project-visual {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px -34px #263b5080;
+}
+.company-strip {
+  margin-top: 56px;
+}
+@media (max-width: 760px) {
+  .hero-showcase {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+    gap: 10px;
+  }
+  .showcase-item:nth-child(n) {
+    margin-bottom: 0;
+  }
+  .showcase-item:nth-child(n + 3) {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase-item {
+    animation: none;
+  }
+}

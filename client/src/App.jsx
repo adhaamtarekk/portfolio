@@ -382,6 +382,17 @@ export default function App() {
               </a>
             </div>
           </div>
+          <div className="hero-showcase" aria-label="Recent work">
+            {["clinic", "ra-studio", "fitout", "double-a"].map((id) => {
+              const p = projects.find((x) => x.id === id);
+              return (
+                <a key={id} href="#work" className="showcase-item">
+                  <img src={p.image} alt="" width="1440" height="900" />
+                  <span>{p.name}</span>
+                </a>
+              );
+            })}
+          </div>
           <div className="company-strip">
             <span>EXPERIENCE ACROSS</span>
             <p>
