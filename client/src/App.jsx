@@ -402,6 +402,24 @@ export default function App() {
               ↓
             </a>
           </div>
+          <dl className="facts">
+            <div>
+              <dt>{projects.length}</dt>
+              <dd>Projects in this portfolio, from booking systems to studio websites</dd>
+            </div>
+            <div>
+              <dt>3</dt>
+              <dd>Engineering teams, from enterprise platforms to healthcare</dd>
+            </div>
+            <div>
+              <dt>EN · ع</dt>
+              <dd>Bilingual builds with full Arabic right-to-left support</dd>
+            </div>
+            <div>
+              <dt>2021</dt>
+              <dd>Shipping production software since my first role at Lirten</dd>
+            </div>
+          </dl>
         </section>
         <section className="section container" id="work">
           <div className="section-heading">
@@ -460,6 +478,9 @@ export default function App() {
                       {...external}
                       aria-label={`Explore ${p.name}`}
                     >
+                      <span className="visual-cta" aria-hidden="true">
+                        {p.demo ? "Open live site ↗" : "View source ↗"}
+                      </span>
                       <img
                         src={p.image}
                         alt={`${p.name} desktop preview`}
@@ -526,7 +547,8 @@ export default function App() {
             ))}
           </div>
         </section>
-        <section className="section container services-section" id="services">
+        <section className="services-band" id="services">
+          <div className="container services-inner">
           <div className="section-heading">
             <div>
               <p className="eyebrow">02 / SERVICES</p>
@@ -554,8 +576,9 @@ export default function App() {
             ))}
           </div>
           <ol className="process">
-            {process.map(([title, text]) => (
+            {process.map(([title, text], i) => (
               <li key={title}>
+                <span className="process-step">{String(i + 1).padStart(2, "0")}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </li>
@@ -563,9 +586,10 @@ export default function App() {
           </ol>
           <div className="services-cta">
             <p>Have a project in mind? Tell me what your business needs.</p>
-            <a className="button primary" href="#contact">
+            <a className="button light" href="#contact">
               Start a project <span aria-hidden="true">↗</span>
             </a>
+          </div>
           </div>
         </section>
         <section className="about-section" id="about">
