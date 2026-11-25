@@ -1,15 +1,36 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import payflow from "./assets/payflow.png";
-import doubleA from "./assets/double-a.png";
+import payflow from "./assets/payflow.jpg";
+import doubleA from "./assets/double-a.jpg";
 import morgal from "./assets/morgal-preview.jpg";
-import raStudio from "./assets/ra-studio.png";
+import raStudio from "./assets/ra-studio.jpg";
+import clinicSystem from "./assets/clinic-system.jpg";
+import fitoutConcept from "./assets/fitout-concept.jpg";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const linkedin = "https://linkedin.com/in/adham-tarek-726394250/";
 const projects = [
   {
+    id: "clinic",
+    type: "systems",
+    name: "Clinic Booking System",
+    category: "BUSINESS SYSTEM · BILINGUAL CONCEPT",
+    tagline: "Fewer phone calls. Fewer no-shows.",
+    image: clinicSystem,
+    intro:
+      "An online booking and reminder system for private clinics, with a patient booking flow, a reception dashboard, and automated WhatsApp messages.",
+    problem:
+      "Private clinics book most visits by phone and lose time to missed appointments. Reception needs one clear view of the day, and patients need reminders they actually read.",
+    build:
+      "Built a five-step booking flow that blocks taken slots and closed days, a reception dashboard with live statuses, search, KPIs and a 7-day load chart, and four WhatsApp reminder rules. The whole interface switches between English and Arabic (RTL) live, including Arabic-Indic numerals and plurals.",
+    result:
+      "A working concept used to pitch clinics in New Cairo and Sheikh Zayed. All patients and appointments are generated sample data; nothing is stored.",
+    stack: ["JavaScript", "HTML", "CSS", "Arabic / RTL", "Cloudflare Pages"],
+    demo: "https://clinic-system-demo.pages.dev/",
+  },
+  {
     id: "ra-studio",
+    type: "websites",
     name: "RA Studio",
     category: "ARCHITECTURE WEBSITE · INDEPENDENT CONCEPT",
     tagline: "A sense of place, on screen.",
@@ -27,6 +48,7 @@ const projects = [
   },
   {
     id: "payflow",
+    type: "systems",
     name: "PayFlow",
     category: "FULL-STACK APPLICATION",
     tagline: "Everyday money, made simpler.",
@@ -44,7 +66,26 @@ const projects = [
     source: "https://github.com/adhaamtarekk/PayFlow",
   },
   {
+    id: "fitout",
+    type: "websites",
+    name: "Fit-out Contractor Platform",
+    category: "WEBSITE & CLIENT PORTAL · CLIENT CONCEPT",
+    tagline: "From first enquiry to handover.",
+    image: fitoutConcept,
+    intro:
+      "A website and client-portal concept for a commercial fit-out and construction company working with retail, F&B, automotive and healthcare brands.",
+    problem:
+      "The company wins work through tenders and multi-branch rollouts, but had no website. Brand and procurement teams need to see capabilities, past work and project progress in one place.",
+    build:
+      "Designed and built a sector explorer, a filterable project index, a client portal that tracks every branch of a rollout with phases and snag lists, an opening-date planner that works back to a Gantt programme, and a three-step request-for-proposal form that sends by email or WhatsApp.",
+    result:
+      "Prepared as a proposal for a real contractor. The live demo is shared privately with the client, so the preview here is anonymised.",
+    stack: ["JavaScript", "HTML", "CSS", "SVG", "Cloudflare Pages"],
+    privateDemo: true,
+  },
+  {
     id: "double-a",
+    type: "websites",
     name: "Double A",
     category: "BILINGUAL WEBSITE · INDEPENDENT CONCEPT",
     tagline: "A considered space for design.",
@@ -62,6 +103,7 @@ const projects = [
   },
   {
     id: "morgal",
+    type: "websites",
     name: "Morgal International",
     category: "BUSINESS WEBSITE",
     tagline: "Making a technical catalog approachable.",
@@ -77,6 +119,36 @@ const projects = [
     stack: ["React", "CSS"],
     source: "https://github.com/adhaamtarekk/Morgal-International",
   },
+];
+const projectOrder = ["clinic", "payflow", "fitout", "ra-studio", "double-a", "morgal"];
+const orderedProjects = projectOrder.map((id) => projects.find((p) => p.id === id));
+const projectFilters = [
+  { id: "all", label: "All work" },
+  { id: "systems", label: "Apps & systems" },
+  { id: "websites", label: "Websites" },
+];
+const services = [
+  {
+    title: "Business websites",
+    text: "Fast, responsive websites for studios and companies, in English and Arabic, designed to turn visitors into enquiries.",
+    points: ["Bilingual & RTL", "Project galleries", "Enquiry & WhatsApp flows"],
+  },
+  {
+    title: "Booking & operations systems",
+    text: "Online booking, dashboards and automated reminders that replace phone calls, spreadsheets and missed appointments.",
+    points: ["Booking flows", "Staff dashboards", "WhatsApp reminders"],
+  },
+  {
+    title: "Web & mobile applications",
+    text: "Full-stack products built on the same tools I use in enterprise work, from first prototype to production.",
+    points: ["React & Angular", "Spring Boot & Laravel", "Flutter & Capacitor"],
+  },
+];
+const process = [
+  ["Concept first", "I build a working preview around your business, so you can see the idea before you commit."],
+  ["Clear scope", "We agree on features, timeline and a fixed price based on what you actually need."],
+  ["Build & launch", "Regular check-ins while I build, then launch on your own domain."],
+  ["Ongoing support", "Updates, fixes and new features once your customers are using it."],
 ];
 const roles = [
   {
@@ -204,6 +276,10 @@ function ContactForm() {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [filter, setFilter] = useState("all");
+  const visibleProjects = orderedProjects.filter(
+    (p) => filter === "all" || p.type === filter,
+  );
   return (
     <>
       <a className="skip-link" href="#main">
@@ -240,6 +316,9 @@ export default function App() {
             <a href="#work" onClick={() => setMenuOpen(false)}>
               Work
             </a>
+            <a href="#services" onClick={() => setMenuOpen(false)}>
+              Services
+            </a>
             <a href="#about" onClick={() => setMenuOpen(false)}>
               About
             </a>
@@ -263,7 +342,7 @@ export default function App() {
               <span className="status-dot" /> FULL-STACK SOFTWARE ENGINEER
             </p>
             <span className="location">
-              BASED IN EGYPT / WORKING EVERYWHERE
+              BASED IN CAIRO / AVAILABLE FOR FREELANCE PROJECTS
             </span>
           </div>
           <h1>
@@ -274,9 +353,9 @@ export default function App() {
           <div className="hero-bottom">
             <div>
               <p className="hero-description">
-                I’m Adham, a software engineer at Deloitte. I build web and
-                mobile applications that connect clear user experiences with
-                dependable backend systems.
+                I’m Adham, a software engineer at Deloitte. I build websites,
+                business systems and mobile apps that connect clear user
+                experiences with dependable backend systems.
               </p>
               <div className="hero-actions">
                 <a className="button primary" href="#work">
@@ -320,12 +399,33 @@ export default function App() {
               <h2>Built with purpose.</h2>
             </div>
             <p>
-              A closer look at the products and websites
+              Products, business systems and websites
               <br className="desktop-break" /> I’ve designed and developed.
             </p>
           </div>
+          <div
+            className="filters"
+            role="group"
+            aria-label="Filter projects by type"
+          >
+            {projectFilters.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                aria-pressed={filter === f.id}
+                onClick={() => setFilter(f.id)}
+              >
+                {f.label}
+                <span>
+                  {f.id === "all"
+                    ? orderedProjects.length
+                    : orderedProjects.filter((p) => p.type === f.id).length}
+                </span>
+              </button>
+            ))}
+          </div>
           <div className="project-list">
-            {projects.map((p, i) => (
+            {visibleProjects.map((p, i) => (
               <article className={`project project-${p.id}`} key={p.id}>
                 <div className="project-visual">
                   <div className="browser-chrome">
@@ -335,23 +435,37 @@ export default function App() {
                       <i />
                     </span>
                     <span>
-                      {p.name.toLowerCase().replaceAll(" ", "")} / preview
+                      {p.demo
+                        ? new URL(p.demo).host
+                        : p.privateDemo
+                          ? "private client preview"
+                          : `${p.name.toLowerCase().replaceAll(" ", "")} / preview`}
                     </span>
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">{p.privateDemo ? "" : "↗"}</span>
                   </div>
-                  <a
-                    href={p.demo || p.source}
-                    {...external}
-                    aria-label={`Explore ${p.name}`}
-                  >
+                  {p.demo || p.source ? (
+                    <a
+                      href={p.demo || p.source}
+                      {...external}
+                      aria-label={`Explore ${p.name}`}
+                    >
+                      <img
+                        src={p.image}
+                        alt={`${p.name} desktop preview`}
+                        loading="lazy"
+                        width="1440"
+                        height="900"
+                      />
+                    </a>
+                  ) : (
                     <img
                       src={p.image}
-                      alt={`${p.name} desktop website preview`}
+                      alt={`${p.name} desktop preview`}
                       loading="lazy"
                       width="1440"
                       height="900"
                     />
-                  </a>
+                  )}
                 </div>
                 <div className="project-copy">
                   <div className="project-kicker">
@@ -377,6 +491,11 @@ export default function App() {
                         Source code <span aria-hidden="true">↗</span>
                       </a>
                     )}
+                    {p.privateDemo && (
+                      <span className="private-note">
+                        Live demo shared privately with the client
+                      </span>
+                    )}
                   </div>
                   <details>
                     <summary>
@@ -396,10 +515,52 @@ export default function App() {
             ))}
           </div>
         </section>
+        <section className="section container services-section" id="services">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">02 / SERVICES</p>
+              <h2>What I can build for you.</h2>
+            </div>
+            <p>
+              For businesses, studios and clinics that need
+              <br className="desktop-break" /> more than a template.
+            </p>
+          </div>
+          <div className="service-grid">
+            {services.map((s, i) => (
+              <article className="service" key={s.title}>
+                <span className="service-index">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                <ul>
+                  {s.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <ol className="process">
+            {process.map(([title, text]) => (
+              <li key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="services-cta">
+            <p>Have a project in mind? Tell me what your business needs.</p>
+            <a className="button primary" href="#contact">
+              Start a project <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
         <section className="about-section" id="about">
           <div className="container about-grid">
             <div>
-              <p className="eyebrow">02 / ABOUT ME</p>
+              <p className="eyebrow">03 / ABOUT ME</p>
               <h2>
                 Good software starts
                 <br />
@@ -420,8 +581,9 @@ export default function App() {
                 make a product work well.
               </p>
               <p>
-                Currently at Deloitte Innovation Hub. Open to discussing
-                full-time roles and part-time remote collaborations.
+                Currently at Deloitte Innovation Hub. I also take on freelance
+                projects, from business websites to booking and operations
+                systems, and I’m open to remote collaborations.
               </p>
               <a href={linkedin} {...external} className="text-link">
                 Connect on LinkedIn ↗
@@ -450,7 +612,7 @@ export default function App() {
         <section className="section container" id="experience">
           <div className="section-heading">
             <div>
-              <p className="eyebrow">03 / EXPERIENCE</p>
+              <p className="eyebrow">04 / EXPERIENCE</p>
               <h2>Where I’ve contributed.</h2>
             </div>
             <a
@@ -483,7 +645,7 @@ export default function App() {
         <section className="contact-section" id="contact">
           <div className="container contact-grid">
             <div>
-              <p className="eyebrow">04 / NEXT CHAPTER</p>
+              <p className="eyebrow">05 / NEXT CHAPTER</p>
               <h2>
                 Have something
                 <br />
@@ -492,9 +654,9 @@ export default function App() {
                 <span>Let’s build it.</span>
               </h2>
               <p>
-                For opportunities, collaborations,
+                For freelance projects, collaborations,
                 <br />
-                or a conversation about your next project.
+                or a conversation about your next idea.
               </p>
               <a
                 className="email-link"
@@ -519,7 +681,7 @@ export default function App() {
         <a className="brand" href="#home">
           Adham Tarek<span className="accent">.</span>
         </a>
-        <p>Software engineer. Thoughtful by design.</p>
+        <p>© {new Date().getFullYear()} Adham Tarek. Software engineer, thoughtful by design.</p>
         <a href="#home">Back to top ↑</a>
       </footer>
     </>
