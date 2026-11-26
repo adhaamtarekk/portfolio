@@ -1,10 +1,8 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import payflow from "./assets/payflow.jpg";
 import doubleA from "./assets/double-a.jpg";
 import morgal from "./assets/morgal-preview.jpg";
 import raStudio from "./assets/ra-studio.jpg";
-import clinicSystem from "./assets/clinic-system.jpg";
 import fitoutConcept from "./assets/fitout-concept.jpg";
 import c_arna from "./assets/concepts/arna.jpg";
 import c_baroque from "./assets/concepts/baroque.jpg";
@@ -18,24 +16,6 @@ import c_az from "./assets/concepts/az.jpg";
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const linkedin = "https://linkedin.com/in/adham-tarek-726394250/";
 const projects = [
-  {
-    id: "clinic",
-    type: "systems",
-    name: "Clinic Booking System",
-    category: "BUSINESS SYSTEM · BILINGUAL CONCEPT",
-    tagline: "Fewer phone calls. Fewer no-shows.",
-    image: clinicSystem,
-    intro:
-      "An online booking and reminder system for private clinics, with a patient booking flow, a reception dashboard, and automated WhatsApp messages.",
-    problem:
-      "Private clinics book most visits by phone and lose time to missed appointments. Reception needs one clear view of the day, and patients need reminders they actually read.",
-    build:
-      "Built a five-step booking flow that blocks taken slots and closed days, a reception dashboard with live statuses, search, KPIs and a 7-day load chart, and four WhatsApp reminder rules. The whole interface switches between English and Arabic (RTL) live, including Arabic-Indic numerals and plurals.",
-    result:
-      "A working concept used to pitch clinics in New Cairo and Sheikh Zayed. All patients and appointments are generated sample data; nothing is stored.",
-    stack: ["JavaScript", "HTML", "CSS", "Arabic / RTL", "Cloudflare Pages"],
-    demo: "https://clinic-system-demo.pages.dev/",
-  },
   {
     id: "ra-studio",
     type: "websites",
@@ -53,25 +33,6 @@ const projects = [
       "An independent concept with illustrative photography and visual studies. Project briefs stay in the browser and are never submitted or stored.",
     stack: ["HTML", "CSS", "JavaScript", "Vercel"],
     demo: "https://ra-studio-demo.vercel.app/",
-  },
-  {
-    id: "payflow",
-    type: "systems",
-    name: "PayFlow",
-    category: "FULL-STACK APPLICATION",
-    tagline: "Everyday money, made simpler.",
-    image: payflow,
-    intro:
-      "A digital wallet bringing voice-based expense entry, transfers, budgets, and spending insights into one experience.",
-    problem:
-      "Make recording expenses and understanding spending easier across web and mobile.",
-    build:
-      "Implemented Arabic and English voice entry, JWT authentication, peer-to-peer transfers, and Recharts analytics, with a Capacitor mobile app.",
-    result:
-      "Explore the public landing page, or review the implementation on GitHub. Wallet features require an account.",
-    stack: ["React", "Next.js", "Prisma", "PostgreSQL", "Capacitor"],
-    demo: "https://pay-flow-fe.vercel.app/",
-    source: "https://github.com/adhaamtarekk/PayFlow",
   },
   {
     id: "fitout",
@@ -128,13 +89,8 @@ const projects = [
     source: "https://github.com/adhaamtarekk/Morgal-International",
   },
 ];
-const projectOrder = ["clinic", "payflow", "fitout", "ra-studio", "double-a", "morgal"];
+const projectOrder = ["fitout", "ra-studio", "double-a", "morgal"];
 const orderedProjects = projectOrder.map((id) => projects.find((p) => p.id === id));
-const projectFilters = [
-  { id: "all", label: "All work" },
-  { id: "systems", label: "Apps & systems" },
-  { id: "websites", label: "Websites" },
-];
 const services = [
   {
     title: "Business websites",
@@ -351,10 +307,7 @@ function ContactForm() {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [filter, setFilter] = useState("all");
-  const visibleProjects = orderedProjects.filter(
-    (p) => filter === "all" || p.type === filter,
-  );
+  const visibleProjects = orderedProjects;
   return (
     <>
       <a className="skip-link" href="#main">
@@ -461,12 +414,19 @@ export default function App() {
             </div>
           </div>
           <div className="hero-showcase" aria-label="Recent work">
-            {["clinic", "ra-studio", "fitout", "double-a"].map((id) => {
-              const p = projects.find((x) => x.id === id);
+            {["fitout", "ra-studio", "craftconcept", "double-a"].map((id) => {
+              const p =
+                projects.find((x) => x.id === id) ||
+                concepts.find((x) => x.id === id);
+              const name = p.name || p.title;
               return (
-                <a key={id} href="#work" className="showcase-item">
+                <a
+                  key={id}
+                  href={p.name ? "#work" : "#concepts"}
+                  className="showcase-item"
+                >
                   <img src={p.image} alt="" width="1440" height="900" />
-                  <span>{p.name}</span>
+                  <span>{name}</span>
                 </a>
               );
             })}
@@ -483,7 +443,7 @@ export default function App() {
           <dl className="facts">
             <div>
               <dt>{projects.length + concepts.length}</dt>
-              <dd>Live projects and concept sites, from booking systems to studio websites</dd>
+              <dd>Live projects and concept sites, from client portals to studio websites</dd>
             </div>
             <div>
               <dt>3</dt>
@@ -506,30 +466,9 @@ export default function App() {
               <h2>Built with purpose.</h2>
             </div>
             <p>
-              Products, business systems and websites
+              Websites and client portals
               <br className="desktop-break" /> I’ve designed and developed.
             </p>
-          </div>
-          <div
-            className="filters"
-            role="group"
-            aria-label="Filter projects by type"
-          >
-            {projectFilters.map((f) => (
-              <button
-                key={f.id}
-                type="button"
-                aria-pressed={filter === f.id}
-                onClick={() => setFilter(f.id)}
-              >
-                {f.label}
-                <span>
-                  {f.id === "all"
-                    ? orderedProjects.length
-                    : orderedProjects.filter((p) => p.type === f.id).length}
-                </span>
-              </button>
-            ))}
           </div>
           <div className="project-list">
             {visibleProjects.map((p, i) => (
@@ -678,7 +617,7 @@ export default function App() {
               <h2>What I can build for you.</h2>
             </div>
             <p>
-              For businesses, studios and clinics that need
+              For businesses and studios that need
               <br className="desktop-break" /> more than a template.
             </p>
           </div>
