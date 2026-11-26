@@ -1767,3 +1767,120 @@ html,
 body {
   overflow-x: clip;
 }
+
+/* Studio concepts gallery */
+.concepts-section {
+  padding: 24px 0 120px;
+}
+.concepts-section .section-heading {
+  padding-top: 72px;
+  border-top: 1px solid var(--blue-line);
+}
+.concepts-section .section-heading > p {
+  max-width: 46ch;
+}
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+.concept {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--blue-line);
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+.concept:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue);
+  box-shadow: 0 28px 50px -30px #1d2f4380;
+}
+.concept-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--blue-wash);
+  border-bottom: 1px solid var(--blue-line);
+}
+.concept-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.concept:hover .concept-image img {
+  transform: scale(1.05);
+}
+.concept-lang {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #1d2f43d9;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.concept-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  padding: 18px 18px 20px;
+}
+.concept-area {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: var(--blue);
+  font-weight: 600;
+}
+.concept h3 {
+  margin: 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--navy);
+}
+.concept-body > p:not(.concept-area) {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.concept-open {
+  margin-top: auto;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy-2);
+}
+.concept:hover .concept-open {
+  color: var(--blue);
+}
+@media (max-width: 1050px) {
+  .concept-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .concepts-section {
+    padding-bottom: 72px;
+  }
+  .concepts-section .section-heading {
+    padding-top: 56px;
+  }
+  .concept-grid {
+    grid-template-columns: 1fr;
+  }
+}

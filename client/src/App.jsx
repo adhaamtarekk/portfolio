@@ -6,6 +6,14 @@ import morgal from "./assets/morgal-preview.jpg";
 import raStudio from "./assets/ra-studio.jpg";
 import clinicSystem from "./assets/clinic-system.jpg";
 import fitoutConcept from "./assets/fitout-concept.jpg";
+import c_arna from "./assets/concepts/arna.jpg";
+import c_baroque from "./assets/concepts/baroque.jpg";
+import c_homedesign from "./assets/concepts/homedesign.jpg";
+import c_elmaayergy from "./assets/concepts/elmaayergy.jpg";
+import c_hbsyrian from "./assets/concepts/hbsyrian.jpg";
+import c_craftconcept from "./assets/concepts/craftconcept.jpg";
+import c_amg from "./assets/concepts/amg.jpg";
+import c_az from "./assets/concepts/az.jpg";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
 const linkedin = "https://linkedin.com/in/adham-tarek-726394250/";
@@ -150,6 +158,73 @@ const process = [
   ["Build & launch", "Regular check-ins while I build, then launch on your own domain."],
   ["Ongoing support", "Updates, fixes and new features once your customers are using it."],
 ];
+const concepts = [
+  {
+    id: "craftconcept",
+    image: c_craftconcept,
+    title: "Custom kitchen workshop",
+    area: "New Cairo",
+    lang: "English",
+    feature: "Kitchen planner: pick a layout and finish and see it update live.",
+  },
+  {
+    id: "elmaayergy",
+    image: c_elmaayergy,
+    title: "Floors and doors showroom",
+    area: "Maadi",
+    lang: "Arabic",
+    feature: "Try floor colours on a room preview, then estimate the cost.",
+  },
+  {
+    id: "amg",
+    image: c_amg,
+    title: "Construction and finishing contractor",
+    area: "New Cairo",
+    lang: "Arabic",
+    feature: "Project tracker showing each build stage with progress and dates.",
+  },
+  {
+    id: "az",
+    image: c_az,
+    title: "Contracting and finishing company",
+    area: "New Cairo",
+    lang: "Arabic",
+    feature: "Drag a before-and-after slider across a finished room.",
+  },
+  {
+    id: "hbsyrian",
+    image: c_hbsyrian,
+    title: "Turn-key interior design studio",
+    area: "New Cairo",
+    lang: "English",
+    feature: "Design, build and furniture in one story, with a budget planner.",
+  },
+  {
+    id: "arna",
+    image: c_arna,
+    title: "Architecture and furniture studio",
+    area: "Sheikh Zayed",
+    lang: "English",
+    feature: "Material-led art direction with a project budget estimator.",
+  },
+  {
+    id: "baroque",
+    image: c_baroque,
+    title: "Classic decor and finishing company",
+    area: "New Cairo",
+    lang: "Arabic",
+    feature: "Classic, gold-on-navy identity with a site-visit booking flow.",
+  },
+  {
+    id: "homedesign",
+    image: c_homedesign,
+    title: "Apartment finishing company",
+    area: "6th of October",
+    lang: "Arabic",
+    feature: "Finishing cost calculator for flats and villas.",
+  },
+].map((c) => ({ ...c, url: `https://${c.id}-concept-adham.pages.dev/` }));
+
 const roles = [
   {
     company: "Deloitte Innovation Hub",
@@ -316,6 +391,9 @@ export default function App() {
             <a href="#work" onClick={() => setMenuOpen(false)}>
               Work
             </a>
+            <a href="#concepts" onClick={() => setMenuOpen(false)}>
+              Concepts
+            </a>
             <a href="#services" onClick={() => setMenuOpen(false)}>
               Services
             </a>
@@ -404,8 +482,8 @@ export default function App() {
           </div>
           <dl className="facts">
             <div>
-              <dt>{projects.length}</dt>
-              <dd>Projects in this portfolio, from booking systems to studio websites</dd>
+              <dt>{projects.length + concepts.length}</dt>
+              <dd>Live projects and concept sites, from booking systems to studio websites</dd>
             </div>
             <div>
               <dt>3</dt>
@@ -545,6 +623,51 @@ export default function App() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+        <section className="concepts-section" id="concepts">
+          <div className="container">
+            <div className="section-heading">
+              <div>
+                <p className="eyebrow">STUDIO CONCEPTS</p>
+                <h2>Built for Cairo’s studios.</h2>
+              </div>
+              <p>
+                Working concept sites I designed and built to pitch interior
+                design, finishing and furniture companies. Each one is live,
+                and half are fully in Arabic.
+              </p>
+            </div>
+            <div className="concept-grid">
+              {concepts.map((c) => (
+                <a
+                  className="concept"
+                  key={c.id}
+                  href={c.url}
+                  {...external}
+                  aria-label={`Open the ${c.title} concept site`}
+                >
+                  <div className="concept-image">
+                    <img
+                      src={c.image}
+                      alt={`${c.title} concept, home page`}
+                      loading="lazy"
+                      width="800"
+                      height="485"
+                    />
+                    <span className="concept-lang">{c.lang}</span>
+                  </div>
+                  <div className="concept-body">
+                    <p className="concept-area">{c.area}</p>
+                    <h3>{c.title}</h3>
+                    <p>{c.feature}</p>
+                    <span className="concept-open">
+                      Open concept <span aria-hidden="true">↗</span>
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </section>
         <section className="services-band" id="services">
